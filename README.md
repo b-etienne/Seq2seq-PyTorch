@@ -49,8 +49,8 @@ etc...
 
 Here is a comparison of the Levenshtein distance for the Luong example vs Seq2seq example.
 
-![Attention accuracy](https://github.com/b-etienne/Seq2seq-PyTorch/experiments/acc_attention.png)
+![Attention accuracy](https://github.com/b-etienne/Seq2seq-PyTorch/blob/master/experiments/acc_attention.png)
 
 We can also check the weights during evaluation
 
-![Attention accuracy](https://github.com/b-etienne/Seq2seq-PyTorch/experiments/att2.PNG)
+![Attention accuracy](https://github.com/b-etienne/Seq2seq-PyTorch/blob/master/experiments/att2.PNG)
