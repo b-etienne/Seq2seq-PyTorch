@@ -1,7 +1,12 @@
-# Sequence_to_sequence in Pytorch
+# Sequence-to-sequence in Pytorch
 
 Sequence-to-sequence neural network with attention. You can play with a toy dataset to test different configurations.
 The toy dataset consists of batched (input, target) pairs, where the target is the reversed input.
+
+## Original papers
+
+* https://arxiv.org/abs/1409.0473
+* https://arxiv.org/abs/1508.04025
 
 ## Getting Started
 
@@ -11,7 +16,7 @@ The toy dataset consists of batched (input, target) pairs, where the target is t
 Install the packages with pip
 
 ```
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ### Train model
