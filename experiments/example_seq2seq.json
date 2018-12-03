@@ -1,0 +1,22 @@
+{
+  "decoder": "RNN",
+  "encoder": "RNN",
+  "n_channels": 4,
+  "encoder_hidden": 64,
+  "encoder_layers": 1,
+  "encoder_dropout": 0.0,
+  "bidirectional_encoder": false,
+  "decoder_hidden": 64,
+  "decoder_layers": 1,
+  "decoder_dropout": 0.1,
+  "bidirectional_decoder": false,
+  "n_classes": 7,
+  "batch_size": 4,
+  "sampling_prob": 0.0,
+  "embedding_dim": 64,
+  "attention_score": "general",
+  "attention_mlp_pre": false,
+  "learning_rate": 0.001,
+  "gpu": false,
+  "loss": "cross_entropy"
+}
