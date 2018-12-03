@@ -115,11 +115,7 @@ class Seq2Seq(nn.Module):
             # - a context, [B, H]
             # - an hidden state, [B, H]
             # - weights, [B, T]
-            # print(decoder_input[0])
-            # print(decoder_context[0, :10])
-            # print(decoder_hidden[0, :10])
-            # print(encoder_outputs[0, :2, :5])
-            # print("-"*60)
+
             if self.use_attention:
                 check_size(decoder_context, self.batch_size, self.decoder.hidden_size)
                 outputs, decoder_hidden, attention_weights = self.decoder.forward(
@@ -149,23 +145,14 @@ class Seq2Seq(nn.Module):
                 # prediction from previous step and could reduce bias.
                 topv, topi = outputs.data.topk(1)
                 decoder_input = topi.squeeze(-1).detach()
-                # if decoder_input.size() == torch.Size([]):
-                #     print("Here")
-                #
-                # if self.gpu:
-                #     decoder_input = Variable(torch.cuda.LongTensor([topi.detach()]))
-                # else:
-                #     decoder_input = Variable(torch.LongTensor([topi.detach()]))
 
-            # if torch.equal(decoder_input.long(), end_of_sequence):
-            #     break
 
         labels = targets.contiguous().view(-1)
 
         if self.loss_type == 'NLL': # ie softmax already on outputs
             mask_value = -float('inf')
             print(torch.sum(logits, dim=2))
-        else: # valeurs AVANT softmax de cross entropy
+        else:
             mask_value = 0
 
         logits = mask_3d(logits.transpose(1, 0), targets_lengths, mask_value)
@@ -211,22 +198,4 @@ class Seq2Seq(nn.Module):
         loss = self.loss_fn(logits, labels)
         # loss2 = self.custom_loss(logits, labels)
         return loss, logits, labels, alignments
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
