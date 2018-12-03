@@ -45,3 +45,12 @@ You can tune the following parameters:
 * the type of attention used
 etc...
 
+## Results
+
+Here is a comparison of the Levenshtein distance for the Luong example vs Seq2seq example.
+
+![Attention accuracy](https://github.com/b-etienne/Seq2seq-PyTorch/experiments/acc_attention.png)
+
+We can also check the weights during evaluation
+
+![Attention accuracy](https://github.com/b-etienne/Seq2seq-PyTorch/experiments/att2.PNG)
