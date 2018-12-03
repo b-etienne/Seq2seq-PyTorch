@@ -11,17 +11,8 @@ from models.helpers import mask_3d
 
 
 class Seq2Seq(nn.Module):
-    """ NOTES:
-    - Loss decreases when batch_size = 1
-    - This suggests that there is an issue with variable length inputs
-    - We peformed masking on the loss
-    - We peformed masking on the attention weights
-    Still no fucking result
-
-    QUESTIONS :
-    - Is hidden encoder state zeros for shortest sequences in batch ? CHECK hidden encoder non zero before feeding in attention
-    - Emdebbing padding index ?
-    - Reset hidden state between each batch ?
+    """
+        Sequence to sequence module
     """
 
     def __init__(self, config):
